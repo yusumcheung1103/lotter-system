@@ -37,6 +37,16 @@ public class LotterController
 
     }
 
+    @RequestMapping(value = "/checkContestantStatus/{ticketNumber}", method = RequestMethod.POST)
+    public ResponseEntity checkContestantStatus(@PathVariable @NotNull long ticketNumber){
+        Winner winner = lotterService.getCurrentWinner();
+        if(winner.getTicket().getTicketNumber() == ticketNumber){
+            return ResponseEntity.ok("Win");
+        }else{
+            return ResponseEntity.ok("Lose");
+        }
+    }
+
 
     @RequestMapping(value = "/reset", method = RequestMethod.POST)
     public ResponseEntity resetProcess()

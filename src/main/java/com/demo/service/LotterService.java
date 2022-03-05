@@ -28,6 +28,7 @@ public class LotterService
     Winner currentWinner;
 
 
+
     public Buyer purchaseTicket(final String buyerName)
     {
         Optional<Ticket> ticket = tickets.getTickets().stream().filter(t -> !t.isPurchased()).findAny();
