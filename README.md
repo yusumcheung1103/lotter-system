@@ -3,7 +3,7 @@ It is a demo project to build a simple lotter system, and now is set to draw in 
 API Structure:
 
 1. /lotter/purchase/{nameOfBuyer}
-  it is a Post request, which requires buyer name as input and returns a ticket with unique ID
+  it is a Post request, which requires buyer name as input and returns a ticket with unique ticket number
 
 2. /lotter/draw
   it is scheduled to be called in every x seconds, and it will return the winner of each round. After a round, all tickets will be reset
